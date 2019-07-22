@@ -1,4 +1,4 @@
--- Display Foreign Keys for Specified Tables
+-- Display Foreign Keys for Specified Table
 
 SELECT
 	tc.constraint_name, 
@@ -14,5 +14,5 @@ JOIN information_schema.constraint_column_usage AS ccu
 	ON ccu.constraint_name = tc.constraint_name
 WHERE 
 	constraint_type = 'FOREIGN KEY' 
-	AND tc.table_name='actors_time_clock'
+	AND tc.table_name='TABLE NAME'
 ;

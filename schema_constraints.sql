@@ -1,4 +1,4 @@
--- List All Table Constraints for a Specified Schema
+-- List All Table Constraints (primary key, foreign key) for a Specified Schema
 
 SELECT 
 	conrelid::regclass AS orig_table,
@@ -10,7 +10,7 @@ JOIN pg_namespace n
 	ON n.oid = c.connamespace
 WHERE  
 	contype IN ('f', 'p ')
-	AND n.nspname = 'sb' -- your schema here
+	AND n.nspname = 'SCHEMA NAME'
 ORDER BY 
 	conrelid::regclass::text, 
 	contype DESC
